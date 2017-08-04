@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Name: Khim Tang
+ * StudentID: 300920672
+ * Date: August 04. 2017
+ * Description: BMI Calculator Application assignment to showcase windows forms and UI Controls
+ * Version: 0.1 - Project was Created
+*/
+
 namespace Assignment5_BMI_Caculator
 {
-    public partial class Form1 : Form
+    public partial class BMICalculatorForm : Form
     {
-        public Form1()
+        public BMICalculatorForm()
         {
             InitializeComponent();
         }

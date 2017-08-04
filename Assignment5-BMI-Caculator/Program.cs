@@ -4,6 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Name: Khim Tang
+ * StudentID: 300920672
+ * Date: August 04. 2017
+ * Description: BMI Calculator Application assignment to showcase windows forms and UI Controls
+ * Version: 0.1 - Project was Created
+*/
+
 namespace Assignment5_BMI_Caculator
 {
     static class Program
@@ -16,7 +24,7 @@ namespace Assignment5_BMI_Caculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new BMICalculatorForm());
         }
     }
 }
