@@ -24,5 +24,10 @@ namespace Assignment5_BMI_Caculator
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
