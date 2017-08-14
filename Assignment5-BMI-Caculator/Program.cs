@@ -9,7 +9,7 @@ using System.Windows.Forms;
  * StudentID: 300920672
  * Date: August 04. 2017
  * Description: BMI Calculator Application assignment to showcase windows forms and UI Controls
- * Version: 0.1 - Project was Created
+ * Version: 0.2 - Started SplashForm first
 */
 
 namespace Assignment5_BMI_Caculator
@@ -24,7 +24,7 @@ namespace Assignment5_BMI_Caculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BMICalculatorForm());
+            Application.Run(new SplashForm());
         }
     }
 }
