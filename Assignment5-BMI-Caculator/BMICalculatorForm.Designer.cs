@@ -187,13 +187,13 @@
             this.CalculateButton.TabIndex = 15;
             this.CalculateButton.Text = "Calculate BMI";
             this.CalculateButton.UseVisualStyleBackColor = false;
-            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
+            this.CalculateButton.Click += new System.EventHandler(this._calculateButton_Click);
             // 
             // ResultTableLayoutPanel
             // 
             this.ResultTableLayoutPanel.ColumnCount = 2;
-            this.ResultTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.66667F));
-            this.ResultTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.33333F));
+            this.ResultTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.66667F));
+            this.ResultTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.33333F));
             this.ResultTableLayoutPanel.Controls.Add(this.ResultTextBox, 1, 1);
             this.ResultTableLayoutPanel.Controls.Add(this.ResultLable, 1, 0);
             this.ResultTableLayoutPanel.Controls.Add(this.textBox1, 0, 1);
@@ -209,19 +209,19 @@
             // ResultTextBox
             // 
             this.ResultTextBox.Enabled = false;
-            this.ResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultTextBox.Location = new System.Drawing.Point(182, 64);
+            this.ResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultTextBox.Location = new System.Drawing.Point(137, 64);
             this.ResultTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.ResultTextBox.Name = "ResultTextBox";
             this.ResultTextBox.ReadOnly = true;
-            this.ResultTextBox.Size = new System.Drawing.Size(115, 26);
+            this.ResultTextBox.Size = new System.Drawing.Size(154, 24);
             this.ResultTextBox.TabIndex = 14;
             // 
             // ResultLable
             // 
             this.ResultLable.AutoSize = true;
             this.ResultLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultLable.Location = new System.Drawing.Point(183, 28);
+            this.ResultLable.Location = new System.Drawing.Point(138, 28);
             this.ResultLable.Margin = new System.Windows.Forms.Padding(4, 28, 3, 0);
             this.ResultLable.Name = "ResultLable";
             this.ResultLable.Size = new System.Drawing.Size(55, 20);
@@ -236,7 +236,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(173, 26);
+            this.textBox1.Size = new System.Drawing.Size(128, 26);
             this.textBox1.TabIndex = 16;
             // 
             // BMIScaleLabel
