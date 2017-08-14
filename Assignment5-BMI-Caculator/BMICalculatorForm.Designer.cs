@@ -43,8 +43,8 @@
             this.BMITextBox = new System.Windows.Forms.TextBox();
             this.CalculateButton = new System.Windows.Forms.Button();
             this.ResultTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ResultLable = new System.Windows.Forms.Label();
             this.ResultTextBox = new System.Windows.Forms.TextBox();
+            this.ResultLable = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.BMIScaleLabel = new System.Windows.Forms.Label();
             this.ResultTableLayoutPanel.SuspendLayout();
@@ -187,6 +187,7 @@
             this.CalculateButton.TabIndex = 15;
             this.CalculateButton.Text = "Calculate BMI";
             this.CalculateButton.UseVisualStyleBackColor = false;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // ResultTableLayoutPanel
             // 
@@ -205,17 +206,6 @@
             this.ResultTableLayoutPanel.Size = new System.Drawing.Size(300, 99);
             this.ResultTableLayoutPanel.TabIndex = 16;
             // 
-            // ResultLable
-            // 
-            this.ResultLable.AutoSize = true;
-            this.ResultLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultLable.Location = new System.Drawing.Point(183, 28);
-            this.ResultLable.Margin = new System.Windows.Forms.Padding(4, 28, 3, 0);
-            this.ResultLable.Name = "ResultLable";
-            this.ResultLable.Size = new System.Drawing.Size(55, 20);
-            this.ResultLable.TabIndex = 15;
-            this.ResultLable.Text = "Result";
-            // 
             // ResultTextBox
             // 
             this.ResultTextBox.Enabled = false;
@@ -226,6 +216,17 @@
             this.ResultTextBox.ReadOnly = true;
             this.ResultTextBox.Size = new System.Drawing.Size(115, 26);
             this.ResultTextBox.TabIndex = 14;
+            // 
+            // ResultLable
+            // 
+            this.ResultLable.AutoSize = true;
+            this.ResultLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultLable.Location = new System.Drawing.Point(183, 28);
+            this.ResultLable.Margin = new System.Windows.Forms.Padding(4, 28, 3, 0);
+            this.ResultLable.Name = "ResultLable";
+            this.ResultLable.Size = new System.Drawing.Size(55, 20);
+            this.ResultLable.TabIndex = 15;
+            this.ResultLable.Text = "Result";
             // 
             // textBox1
             // 
