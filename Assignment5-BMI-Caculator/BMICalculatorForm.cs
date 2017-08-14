@@ -63,7 +63,7 @@ heightInInches	x	heightInInches
 
             if (bmi < 18.5)
             {
-                Console.WriteLine();
+                
                 textBox1.Text = "Underweight";
                 //ResultTextBox
             }
