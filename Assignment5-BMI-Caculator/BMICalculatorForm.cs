@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * StudentID: 300920672
  * Date: August 04. 2017
  * Description: BMI Calculator Application assignment to showcase windows forms and UI Controls
- * Version: 0.2 - Added function to the BMI calculator buttons
+ * Version: 0.3 - Added the "FormClosing" event handler
 */
 
 namespace Assignment5_BMI_Caculator
@@ -79,6 +79,16 @@ heightInInches	x	heightInInches
             {
                 textBox1.Text = "Obese";
             }
+        }
+        /// <summary>
+        /// This is an event handler for the "FormClosing" event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void BMICalculatorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
