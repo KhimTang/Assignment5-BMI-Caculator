@@ -30,16 +30,16 @@ namespace Assignment5_BMI_Caculator
 
         }
 
-        private void _calculateButton_Click(object sender, EventArgs e)
+        private void CalculateButton_Click(object sender, EventArgs e)
         {
             if (ImperialRadioButton.Checked)
             {
-                _calculateBmiImperial();
+                CalculateBmiImperial();
                 return;
             }
             else
             {
-                _calculateBmiMetrics();
+                CalculateBmiMetrics();
                 return;
             }
        
@@ -47,9 +47,10 @@ namespace Assignment5_BMI_Caculator
         /// <summary>
         /// This method is for the calculateBmiMetrics
         /// </summary>
-        private void _calculateBmiMetrics()
+        private void CalculateBmiMetrics()
         {
             double weight, centimeters;
+
             bool wasParseSuccessful;
             //This is a faster way to do try catch for conversions
             wasParseSuccessful = double.TryParse(KilogramsTextBox.Text, out weight);
@@ -69,7 +70,8 @@ namespace Assignment5_BMI_Caculator
 
             double bmi = weight / (meters * meters);
 
-            BMITextBox.Text = string.Format("{0:F2}", bmi);
+            BMITextBox.Text = string.Format("Your BMI is:" + Environment.NewLine 
+                + "{0:F2}", bmi);
 
             CalculateBMI(bmi);
         }
@@ -77,7 +79,7 @@ namespace Assignment5_BMI_Caculator
         /// This method is for the CalculateBmiImperial
         /// </summary>
 
-        private void _calculateBmiImperial()
+        private void CalculateBmiImperial()
         {
             double weight, feet, inches, bmi;
             bool wasParseSuccessful;
@@ -110,8 +112,10 @@ namespace Assignment5_BMI_Caculator
             inches += feet * 12;
 
             bmi = (weight * 703) / (inches * inches);
+            BMITextBox.Text = string.Format("Your BMI is:" + Environment.NewLine
+                + "{0:F2}", bmi);
 
-            BMITextBox.Text = string.Format("{0:F2}", bmi);
+           // BMITextBox.Text = string.Format("{0:F2}", bmi); no longer needed
 
             CalculateBMI(bmi);
         }
@@ -142,6 +146,7 @@ namespace Assignment5_BMI_Caculator
             {
                 BMIScaleTextBox.Text = "Normal";
                 ResultTextBox.BackColor = Color.Green;
+                ResultTextBox.ForeColor = Color.Red;
                 ResultTextBox.Text = "Between 18.5 and 24.9";
             }
             else if (25 <= bmi && bmi < 29.9)

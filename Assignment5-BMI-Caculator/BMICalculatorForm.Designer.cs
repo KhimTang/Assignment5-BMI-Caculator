@@ -159,7 +159,7 @@
             // 
             this.BMIIndexLabel.AutoSize = true;
             this.BMIIndexLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMIIndexLabel.Location = new System.Drawing.Point(4, 305);
+            this.BMIIndexLabel.Location = new System.Drawing.Point(4, 276);
             this.BMIIndexLabel.Margin = new System.Windows.Forms.Padding(2, 16, 2, 2);
             this.BMIIndexLabel.Name = "BMIIndexLabel";
             this.BMIIndexLabel.Size = new System.Drawing.Size(173, 20);
@@ -169,13 +169,15 @@
             // 
             // BMITextBox
             // 
+            this.BMITextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BMITextBox.Enabled = false;
             this.BMITextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMITextBox.Location = new System.Drawing.Point(183, 303);
+            this.BMITextBox.Location = new System.Drawing.Point(183, 276);
             this.BMITextBox.Margin = new System.Windows.Forms.Padding(3, 16, 3, 3);
+            this.BMITextBox.Multiline = true;
             this.BMITextBox.Name = "BMITextBox";
             this.BMITextBox.ReadOnly = true;
-            this.BMITextBox.Size = new System.Drawing.Size(115, 22);
+            this.BMITextBox.Size = new System.Drawing.Size(115, 48);
             this.BMITextBox.TabIndex = 12;
             // 
             // CalculateButton
@@ -188,7 +190,7 @@
             this.CalculateButton.TabIndex = 15;
             this.CalculateButton.Text = "Calculate BMI";
             this.CalculateButton.UseVisualStyleBackColor = false;
-            this.CalculateButton.Click += new System.EventHandler(this._calculateButton_Click);
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // ResultTableLayoutPanel
             // 
@@ -214,7 +216,6 @@
             this.ResultTextBox.Location = new System.Drawing.Point(137, 64);
             this.ResultTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.ResultTextBox.Name = "ResultTextBox";
-            this.ResultTextBox.ReadOnly = true;
             this.ResultTextBox.Size = new System.Drawing.Size(154, 24);
             this.ResultTextBox.TabIndex = 14;
             // 
@@ -266,6 +267,7 @@
             // BMICalculatorForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(304, 441);
             this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.ResultTableLayoutPanel);
