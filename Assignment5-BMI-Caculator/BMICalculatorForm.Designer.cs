@@ -45,8 +45,9 @@
             this.ResultTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ResultTextBox = new System.Windows.Forms.TextBox();
             this.ResultLable = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BMIScaleTextBox = new System.Windows.Forms.TextBox();
             this.BMIScaleLabel = new System.Windows.Forms.Label();
+            this.ResetButton = new System.Windows.Forms.Button();
             this.ResultTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,7 +182,7 @@
             // 
             this.CalculateButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculateButton.Location = new System.Drawing.Point(86, 239);
+            this.CalculateButton.Location = new System.Drawing.Point(27, 238);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(128, 32);
             this.CalculateButton.TabIndex = 15;
@@ -196,7 +197,7 @@
             this.ResultTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.33333F));
             this.ResultTableLayoutPanel.Controls.Add(this.ResultTextBox, 1, 1);
             this.ResultTableLayoutPanel.Controls.Add(this.ResultLable, 1, 0);
-            this.ResultTableLayoutPanel.Controls.Add(this.textBox1, 0, 1);
+            this.ResultTableLayoutPanel.Controls.Add(this.BMIScaleTextBox, 0, 1);
             this.ResultTableLayoutPanel.Controls.Add(this.BMIScaleLabel, 0, 0);
             this.ResultTableLayoutPanel.Location = new System.Drawing.Point(1, 330);
             this.ResultTableLayoutPanel.Name = "ResultTableLayoutPanel";
@@ -228,16 +229,17 @@
             this.ResultLable.TabIndex = 15;
             this.ResultLable.Text = "Result";
             // 
-            // textBox1
+            // BMIScaleTextBox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 64);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(128, 26);
-            this.textBox1.TabIndex = 16;
+            this.BMIScaleTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BMIScaleTextBox.Enabled = false;
+            this.BMIScaleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BMIScaleTextBox.Location = new System.Drawing.Point(3, 64);
+            this.BMIScaleTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.BMIScaleTextBox.Name = "BMIScaleTextBox";
+            this.BMIScaleTextBox.ReadOnly = true;
+            this.BMIScaleTextBox.Size = new System.Drawing.Size(128, 26);
+            this.BMIScaleTextBox.TabIndex = 16;
             // 
             // BMIScaleLabel
             // 
@@ -250,10 +252,22 @@
             this.BMIScaleLabel.TabIndex = 17;
             this.BMIScaleLabel.Text = "BMIScale";
             // 
+            // ResetButton
+            // 
+            this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetButton.Location = new System.Drawing.Point(186, 238);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(115, 32);
+            this.ResetButton.TabIndex = 17;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
             // BMICalculatorForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(304, 441);
+            this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.ResultTableLayoutPanel);
             this.Controls.Add(this.BMITextBox);
             this.Controls.Add(this.CalculateButton);
@@ -302,8 +316,9 @@
         private System.Windows.Forms.TableLayoutPanel ResultTableLayoutPanel;
         private System.Windows.Forms.TextBox ResultTextBox;
         private System.Windows.Forms.Label ResultLable;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox BMIScaleTextBox;
         private System.Windows.Forms.Label BMIScaleLabel;
+        private System.Windows.Forms.Button ResetButton;
     }
 }
 

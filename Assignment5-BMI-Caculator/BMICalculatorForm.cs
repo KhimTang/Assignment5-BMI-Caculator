@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * StudentID: 300920672
  * Date: August 14. 2017
  * Description: BMI Calculator Application assignment to showcase windows forms and UI Controls
- * Version: 0.3 - Added 2 methods _calculateBmiImperial & _calculateBmiMetrics
+ * Version: 0.4 - Added method CalculateBMI
 */
 
 namespace Assignment5_BMI_Caculator
@@ -42,85 +42,16 @@ namespace Assignment5_BMI_Caculator
                 _calculateBmiMetrics();
                 return;
             }
-
-
-
-
-
-
-
-
-            double weight, feet;
-            bool wasParseSuccessful;
-
-            wasParseSuccessful = double.TryParse(PoundsTextBox.Text, out weight);
-            if (wasParseSuccessful == false)
-            {
-                MessageBox.Show(this, "Invalid weight");
-                return;
-            }
-
-            wasParseSuccessful = double.TryParse(FeetTextBox.Text, out feet);
-            if (wasParseSuccessful == false)
-            {
-                MessageBox.Show(this, "Invalid feet");
-                return;
-            }
-
-
-            double bmi;
-            if (ImperialRadioButton.Checked)
-            {
-                /*
-                 * weightInPounds	x	703
-heightInInches	x	heightInInches
-                 */
-                weight = double.Parse(PoundsTextBox.Text);
-                feet = double.Parse(FeetTextBox.Text);
-                double inches = double.Parse(InchesTextBox.Text);
-                inches += feet * 12;
-
-                bmi = (weight * 703) / (inches * inches);
-            }
-            else if (MetricRadioButton.Checked)
-            {
-                weight = double.Parse(KilogramsTextBox.Text);
-                double centimeters = double.Parse(CentimetersTextBox.Text);
-                double meters = centimeters / 100;
-
-                bmi = weight / (meters * meters);
-            }
-            else
-            {
-                // ask user to select one
-                bmi = 0;
-            }
-            BMITextBox.Text = string.Format("{0:F2}", bmi);
-
-            if (bmi < 18.5)
-            {
-                textBox1.Text = "Underweight";
-                ResultTextBox.Text = "Less than 18.5";
-            }
-            else if (18.5 <= bmi && bmi < 24.9)
-            {
-                textBox1.Text = "Normal";
-            }
-            else if (25 <= bmi && bmi < 29.9)
-            {
-                textBox1.Text = "OverWeight";
-            }
-            else
-            {
-                textBox1.Text = "Obese";
-            }
+       
         }
-
+        /// <summary>
+        /// This method is for the calculateBmiMetrics
+        /// </summary>
         private void _calculateBmiMetrics()
         {
             double weight, centimeters;
             bool wasParseSuccessful;
-
+            //This is a faster way to do try catch for conversions
             wasParseSuccessful = double.TryParse(KilogramsTextBox.Text, out weight);
             if (wasParseSuccessful == false)
             {
@@ -140,27 +71,11 @@ heightInInches	x	heightInInches
 
             BMITextBox.Text = string.Format("{0:F2}", bmi);
 
-            if (bmi < 18.5)
-            {
-                textBox1.Text = "Underweight";
-                ResultTextBox.Text = "Less than 18.5";
-            }
-            else if (18.5 <= bmi && bmi < 24.9)
-            {
-                textBox1.Text = "Normal";
-                ResultTextBox.Text = "Between 18.5 and 24.9";
-            }
-            else if (25 <= bmi && bmi < 29.9)
-            {
-                textBox1.Text = "OverWeight";
-                ResultTextBox.Text = "Between 25 and 29.9";
-            }
-            else
-            {
-                textBox1.Text = "Obese";
-                ResultTextBox.Text = "30 or greater";
-            }
+            CalculateBMI(bmi);
         }
+        /// <summary>
+        /// This method is for the CalculateBmiImperial
+        /// </summary>
 
         private void _calculateBmiImperial()
         {
@@ -190,7 +105,7 @@ heightInInches	x	heightInInches
 
             /*
              * weightInPounds	x	703
-heightInInches	x	heightInInches
+             *  heightInInches	x	heightInInches
              */
             inches += feet * 12;
 
@@ -198,26 +113,7 @@ heightInInches	x	heightInInches
 
             BMITextBox.Text = string.Format("{0:F2}", bmi);
 
-            if (bmi < 18.5)
-            {
-                textBox1.Text = "Underweight";
-                ResultTextBox.Text = "Less than 18.5";
-            }
-            else if (18.5 <= bmi && bmi < 24.9)
-            {
-                textBox1.Text = "Normal";
-                ResultTextBox.Text = "Between 18.5 and 24.9";
-            }
-            else if (25 <= bmi && bmi < 29.9)
-            {
-                textBox1.Text = "OverWeight";
-                ResultTextBox.Text = "Between 25 and 29.9";
-            }
-            else
-            {
-                textBox1.Text = "Obese";
-                ResultTextBox.Text = "30 or greater";
-            }
+            CalculateBMI(bmi);
         }
 
         /// <summary>
@@ -228,6 +124,52 @@ heightInInches	x	heightInInches
         private void BMICalculatorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        /// <summary>
+        /// This is a method for calculating result for BMI
+        /// </summary>
+        /// <param name="bmi"></param>
+        private void CalculateBMI(double bmi)
+        {
+            if (bmi < 18.5)
+            {
+                BMIScaleTextBox.Text = "Underweight";
+                ResultTextBox.BackColor = Color.Aqua;
+                ResultTextBox.Text = "Less than 18.5";
+            }
+            else if (18.5 <= bmi && bmi < 24.9)
+            {
+                BMIScaleTextBox.Text = "Normal";
+                ResultTextBox.BackColor = Color.Green;
+                ResultTextBox.Text = "Between 18.5 and 24.9";
+            }
+            else if (25 <= bmi && bmi < 29.9)
+            {
+                BMIScaleTextBox.Text = "OverWeight";
+                ResultTextBox.BackColor = Color.Yellow;
+                ResultTextBox.Text = "Between 25 and 29.9";
+            }
+            else
+            {
+                BMIScaleTextBox.Text = "Obese";
+                ResultTextBox.BackColor = Color.Red;
+                ResultTextBox.Text = "30 or greater";
+            }
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            FeetTextBox.Text = "";
+            InchesTextBox.Text = "";
+            PoundsTextBox.Text = "";
+            CentimetersTextBox.Text = "";
+            KilogramsTextBox.Text = "";
+            BMIScaleTextBox.Text = "";
+            ResultTextBox.Text = "";
+            BMITextBox.Text = "";
+            ResultTextBox.BackColor = SystemColors.Control;
+
         }
     }
 }
